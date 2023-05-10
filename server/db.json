@@ -1,0 +1,73 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "eric@gmail.com",
+            "name": "eric",
+            "password": "eric@123"
+        },
+        {
+            "id": 2,
+            "name": "mike",
+            "email": "mike@gmail.com",
+            "password": "mike@123"
+        }
+    ],
+    "accounts": [
+        {
+            "id": 1,
+            "userId": 1,
+            "type": "checking",
+            "balance": 5000
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "type": "checking",
+            "balance": 10000
+        }
+    ],
+    "transactions": [
+        {
+            "id": 1,
+            "action": "transfer",
+            "userId": 1,
+            "receiverId": 2,
+            "amount": 1000,
+            "timestamp": "2023-05-09"
+        },
+        {
+            "id": 2,
+            "action": "deposit",
+            "userId": 1,
+            "receiverId": "null",
+            "amount": 1000,
+            "timestamp": "2023-05-09"
+        },
+        {
+            "id": 3,
+            "action": "withdraw",
+            "userId": 1,
+            "receiverId": null,
+            "amount": 1000,
+            "timestamp": "2023-05-09"
+        }
+    ],
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "author": "typicode"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
+    ],
+    "profile": {
+        "name": "typicode"
+    }
+}

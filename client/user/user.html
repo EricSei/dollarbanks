@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="createUser()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+        <li>Hit the gym</li>
+        <li class="checked">Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
+    </ul>
+
+
+    <form action="https://jsonplaceholder.typicode.com/users" id="example-form">
+        <label for="first-name">
+            <strong>First Name:</strong>
+            <input type="text" name="first_name" id="first-name">
+        </label>
+
+        <label for="last-name">
+            Last Name:
+            <input type="text" name="last_name" id="last-name">
+        </label>
+
+        <input type="submit" value="Create new user">
+    </form>
+
+    <script src="user.js"></script>
+</body>
+
+</html>
