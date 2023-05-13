@@ -4,7 +4,7 @@
   "description": "Dollar Banks Server",
   "main": "index.js",
   "scripts": {
-    "run": "json-server --watch db.json",
+    "start": "json-server --watch --no-cors db.json",
     "test": "npm run test"
   },
   "keywords": [

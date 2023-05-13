@@ -6,42 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="user.css">
-
     <title>Document</title>
 </head>
 
 <body>
     <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="createUser()" class="addBtn">Add</span>
+        <h1> Banking App </h1>
+        <h2 id="welcome"> Welcome , User Name </h2>
     </div>
 
-    <ul id="myUL">
-        <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-    </ul>
+    <div class="user">
+        <ul>
+            <li id="user-id"> user Id : </li>
+            <li id="user-name"> user name : </li>
+            <li id="user-email"> user email : </li>
+        </ul>
 
+    </div>
+    <div class="transaction">
+        <table id="transaction-table">
+            <thead>
+                <tr id="transaction-head-row">
+                    <th id="transaction-head-number">Transaction Number </th>
+                    <th id="transaction-head-action"> Action </th>
+                    <th id="transaction-head-senderId"> Sender Id </th>
+                    <th id="transaction-head-receiverId"> Receiver Id </th>
+                    <th id="transaction-head-receiverAmount"> Amount </th>
+                    <th id="transaction-head-receivedDate"> Date </th>
+                </tr>
+            </thead>
+            <tbody id="trst-body">
+                <tr class="trst-row">
+                    <td class="trst-cell-id"> 1 </td>
+                    <td> Sent / Receiver </td>
+                    <td> sender id</td>
+                    <td> 2 </td>
+                    <td> $ 1200 </td>
+                    <td> May 09 2023 </td>
+                </tr>
+            </tbody>
 
-    <form action="https://jsonplaceholder.typicode.com/users" id="example-form">
-        <label for="first-name">
-            <strong>First Name:</strong>
-            <input type="text" name="first_name" id="first-name">
-        </label>
+        </table>
+    </div>
 
-        <label for="last-name">
-            Last Name:
-            <input type="text" name="last_name" id="last-name">
-        </label>
+    <div>
+        <button> Sign Out </button>
+    </div>
+    <script type="module" src="user.js"></script>
 
-        <input type="submit" value="Create new user">
-    </form>
-
-    <script src="user.js"></script>
 </body>
 
 </html>

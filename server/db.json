@@ -1,73 +1,124 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "email": "eric@gmail.com",
-            "name": "eric",
-            "password": "eric@123"
-        },
-        {
-            "id": 2,
-            "name": "mike",
-            "email": "mike@gmail.com",
-            "password": "mike@123"
-        }
-    ],
-    "accounts": [
-        {
-            "id": 1,
-            "userId": 1,
-            "type": "checking",
-            "balance": 5000
-        },
-        {
-            "id": 2,
-            "userId": 2,
-            "type": "checking",
-            "balance": 10000
-        }
-    ],
-    "transactions": [
-        {
-            "id": 1,
-            "action": "transfer",
-            "userId": 1,
-            "receiverId": 2,
-            "amount": 1000,
-            "timestamp": "2023-05-09"
-        },
-        {
-            "id": 2,
-            "action": "deposit",
-            "userId": 1,
-            "receiverId": "null",
-            "amount": 1000,
-            "timestamp": "2023-05-09"
-        },
-        {
-            "id": 3,
-            "action": "withdraw",
-            "userId": 1,
-            "receiverId": null,
-            "amount": 1000,
-            "timestamp": "2023-05-09"
-        }
-    ],
-    "posts": [
-        {
-            "id": 1,
-            "title": "json-server",
-            "author": "typicode"
-        }
-    ],
-    "comments": [
-        {
-            "id": 1,
-            "body": "some comment",
-            "postId": 1
-        }
-    ],
-    "profile": {
-        "name": "typicode"
+  "users": [
+    {
+      "id": 1,
+      "email": "eric@gmail.com",
+      "name": "eric",
+      "password": "eric@123"
+    },
+    {
+      "id": 2,
+      "name": "mike",
+      "email": "mike@gmail.com",
+      "password": "mike@123"
+    },
+    {
+      "name": "johndoe",
+      "email": "johndoe@gmail.com",
+      "password": "johndoe@123",
+      "id": 3
+    },
+    {
+      "name": "zoezoe",
+      "email": "zoezoe@gmail.com",
+      "password": "zoezoe@123",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "name": "orange",
+      "email": "orange@gmail.com",
+      "password": "orange@123",
+      "id": 6
+    },
+    {
+      "name": "jj",
+      "email": "jj@gmail.com",
+      "password": "jj@123",
+      "id": 7
     }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "checking",
+      "balance": 5000
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "type": "checking",
+      "balance": 10000
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "action": "transfer",
+      "userId": 1,
+      "receiverId": 2,
+      "amount": 1000,
+      "timestamp": "2023-05-09"
+    },
+    {
+      "id": 2,
+      "action": "deposit",
+      "userId": 1,
+      "receiverId": null,
+      "amount": 1000,
+      "timestamp": "2023-05-09"
+    },
+    {
+      "id": 3,
+      "action": "withdraw",
+      "userId": 1,
+      "receiverId": null,
+      "amount": 1000,
+      "timestamp": "2023-05-09"
+    },
+    {
+      "id": 4,
+      "action": "transfer",
+      "userId": 1,
+      "receiverId": 2,
+      "amount": 1000,
+      "timestamp": "2022-05-09"
+    },
+    {
+      "id": 5,
+      "action": "deposit",
+      "userId": 1,
+      "receiverId": null,
+      "amount": 1000,
+      "timestamp": "2023-05-08"
+    },
+    {
+      "id": 6,
+      "action": "withdraw",
+      "userId": 1,
+      "receiverId": null,
+      "amount": 1000,
+      "timestamp": "2023-03-09"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

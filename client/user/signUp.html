@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myDIV" class="header">
+        <h1> Banking App </h1>
+        <h2> Sign Up </h2>
+
+    </div>
+
+    <form action=" http://localhost:3000/users" id="user-form">
+        <label for="name">
+            <strong> Name :</strong>
+            <input type="text" name="name" id="name">
+        </label>
+
+        <label for="email">
+            Email :
+            <input type="text" name="email" id="email">
+        </label>
+
+        <label for="password">
+            Password :
+            <input type="text" name="password" id="password">
+        </label>
+
+        <label for="confirm_password">
+            Confirm Password :
+            <input type="text" name="confirm_password" id="confirm_password">
+        </label>
+
+        <input type="submit" value="Create new user">
+    </form>
+    <script type="module" src="user.js"></script>
+    <script type="module" src="signUp.js"></script>
+</body>
+
+</html>
