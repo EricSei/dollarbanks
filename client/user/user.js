@@ -17,7 +17,6 @@ async function getRecentTransactions(userId) {
     } catch (error) {
         console.error(error);
     }
-
 }
 
 if (currentUser) {
