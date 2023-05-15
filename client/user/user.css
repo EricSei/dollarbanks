@@ -1,0 +1,14 @@
+#main-transfer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+}
+
+#transfer-form {
+    margin: auto;
+}
+
+th {
+    border: 1px solid red;
+}

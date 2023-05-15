@@ -38,6 +38,24 @@
       "email": "jj@gmail.com",
       "password": "jj@123",
       "id": 7
+    },
+    {
+      "name": "banana",
+      "email": "banana@gmail.com",
+      "password": "banana@123",
+      "id": 8
+    },
+    {
+      "name": "peppa",
+      "email": "peppa@gmail.com",
+      "password": "peppa@123",
+      "id": 9
+    },
+    {
+      "name": "rachel",
+      "email": "rachel@gmail.com",
+      "password": "rachel@123",
+      "id": 10
     }
   ],
   "accounts": [
@@ -45,13 +63,19 @@
       "id": 1,
       "userId": 1,
       "type": "checking",
-      "balance": 5000
+      "balance": 6028
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "type": "saving",
+      "balance": 15000
     },
     {
       "id": 2,
       "userId": 2,
       "type": "checking",
-      "balance": 10000
+      "balance": 5000
     }
   ],
   "transactions": [
@@ -102,23 +126,250 @@
       "receiverId": null,
       "amount": 1000,
       "timestamp": "2023-03-09"
-    }
-  ],
-  "posts": [
+    },
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "action": "",
+      "receiverId": "",
+      "amount": "",
+      "id": 7
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "1000",
+      "id": 8
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "1000",
+      "id": 9
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "900",
+      "id": 10
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "1000",
+      "id": 11
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "200",
+      "id": 12
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "100",
+      "id": 13
+    },
+    {
+      "action": "transfer",
+      "receiverId": "1",
+      "amount": "209",
+      "id": 14
+    },
+    {
+      "action": "transfer",
+      "receiverId": "1",
+      "amount": "250",
+      "id": 15
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "222",
+      "id": 16
+    },
+    {
+      "action": "transfer",
+      "receiverId": "211",
+      "amount": "1000",
+      "id": 17
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "1000",
+      "id": 18
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "200",
+      "id": 19
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "122",
+      "id": 20
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "111",
+      "userId": 10,
+      "timestamp": "2023-01-15",
+      "id": 21
+    },
+    {
+      "action": "transfer",
+      "receiverId": "121",
+      "amount": "100",
+      "userId": 1,
+      "timestamp": "2023-01-15",
+      "id": 22
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "100",
+      "userId": 1,
+      "timestamp": "2023-01-15",
+      "id": 23
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "10000",
+      "userId": 1,
+      "timestamp": "2023-01-15",
+      "id": 24
+    },
+    {
+      "action": "transfer",
+      "receiverId": "222",
+      "amount": "1000",
+      "userId": 1,
+      "timestamp": "2023-01-15",
+      "id": 25
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "30000",
+      "userId": 1,
+      "timestamp": "2023-05-14T23:40:14.240Z",
+      "id": 26
+    },
+    {
+      "action": "transfer",
+      "receiverId": "4",
+      "amount": "1000",
+      "userId": 1,
+      "timestamp": "2023-05-14T23:42:16.537Z",
+      "id": 27
+    },
+    {
+      "action": "transfer",
+      "receiverId": "2",
+      "amount": "555",
+      "userId": 1,
+      "timestamp": "2023-05-14T23:42:44.761Z",
+      "id": 28
+    },
+    {
+      "action": "transfer",
+      "receiverId": "3",
+      "amount": "1000",
+      "userId": 1,
+      "timestamp": "2023-05-14T23:45:33.106Z",
+      "id": 29
+    },
+    {
+      "userAccountId": "1",
+      "action": "transfer",
+      "receiverAccountId": "2",
+      "amount": "333",
+      "userId": 1,
+      "timestamp": "2023-05-15T01:27:55.050Z",
+      "id": 30
+    },
+    {
+      "userAccountId": "1",
+      "amount": 333,
+      "userId": 1,
+      "action": "transfer",
+      "receiverId": "3",
+      "receiverAccountId": "2",
+      "timestamp": "2023-05-15T01:27:55.050Z",
+      "id": 31
+    },
+    {
+      "action": "transfer",
+      "userId": 1,
+      "receiverId": "2",
+      "receiverAccountId": "2",
+      "amount": "255",
+      "timestamp": "2023-05-09",
+      "id": 32
+    },
+    {
+      "action": "transfer",
+      "userId": 1,
+      "userAccountId": "1",
+      "receiverId": "2",
+      "receiverAccountId": "2",
+      "amount": "200",
+      "timestamp": "2023-05-15T01:49:11.816Z",
+      "id": 33
+    },
+    {
+      "action": "transfer",
+      "userId": 1,
+      "userAccountId": "1",
+      "receiverId": "2",
+      "receiverAccountId": "2",
+      "amount": 100,
+      "timestamp": "2023-05-15T01:54:07.798Z",
+      "id": 34
+    },
+    {
+      "action": "transfer",
+      "userId": 1,
+      "userAccountId": "1",
+      "receiverId": "2",
+      "receiverAccountId": "2",
+      "amount": 222,
+      "timestamp": "2023-05-15T01:57:46.694Z",
+      "id": 35
+    },
+    {
+      "action": "transfer",
+      "userId": 2,
+      "userAccountId": "2",
+      "receiverId": "1",
+      "receiverAccountId": "1",
+      "amount": 250,
+      "timestamp": "2023-05-15T02:00:18.111Z",
+      "id": 36
+    },
+    {
+      "action": "deposit",
+      "userId": 2,
+      "userAccountId": "2",
+      "receiverId": 0,
+      "receiverAccountId": 0,
+      "amount": 5000,
+      "timestamp": "2023-05-15T02:09:14.381Z",
+      "id": 37
+    },
+    {
+      "action": "withdraw",
+      "userId": 2,
+      "userAccountId": "2",
+      "receiverId": 0,
+      "receiverAccountId": 0,
+      "amount": 972,
+      "timestamp": "2023-05-15T02:09:53.928Z",
+      "id": 38
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

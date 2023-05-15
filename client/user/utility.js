@@ -16,7 +16,7 @@ export function setUser(userEmail, userData) {
 export async function getUserByEmail(email) {
     const response = await fetch(`http://localhost:3000/users?email=${email}`);
     const jsonData = await response.json();
-    console.log(jsonData[0]);
+    // console.log(jsonData[0]);
     return jsonData[0];
 }
 
@@ -27,8 +27,11 @@ export function getUser(userEmail) {
 }
 
 export function destroyUser(userEmail) {
+    console.log(userEmail + " will be removed");
     localStorage.removeItem(userEmail);
-    console.log(userEmail + " is removed");
+    localStorage.removeItem("auth");
+    location.replace("http://localhost:5500/client/home/home.html")
+
 }
 
 /**
@@ -39,9 +42,7 @@ export function destroyUser(userEmail) {
  * @param {FormData} options.formData - `FormData` instance
  * @return {Object} - Response body from URL that was POSTed to
  */
-export async function getFormData(url, formData) {
-
-    const formDataJsonString = JSON.stringify(formData); //Stringtify Object
+export async function getFormData(url) {
 
     const fetchOptions = {
         method: "GET",
@@ -69,12 +70,35 @@ export async function getFormData(url, formData) {
  * @param {FormData} options.formData - `FormData` instance
  * @return {Object} - Response body from URL that was POSTed to
  */
-async function postFormData(url, formData) {
+export async function postFormData(url, formData) {
 
     const formDataJsonString = JSON.stringify(formData); //Stringtify Object
 
     const fetchOptions = {
         method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: formDataJsonString,
+    };
+
+    const response = await fetch(url, fetchOptions);
+
+    if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
+    }
+
+    return response.json();
+}
+
+export async function updateFormData(url, formData) {
+
+    const formDataJsonString = JSON.stringify(formData); //Stringtify Object
+
+    const fetchOptions = {
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"

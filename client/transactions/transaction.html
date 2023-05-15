@@ -5,53 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user.css">
-
+    <link rel="stylesheet" href="transaction.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="createUser()" class="addBtn">Add</span>
+
+    <h1> User Accounts</h1>
+    <div class="accounts">
+        <table id="accounts-table">
+            <thead>
+                <tr id="accounts-head-row">
+                    <th id="accounts-head-number"> Accounts Number </th>
+                    <th id="accounts-head-action"> Account Type </th>
+                    <th id="accounts-head-senderId"> Balance </th>
+                </tr>
+            </thead>
+            <tbody id="trst-body">
+                <tr class="trst-row">
+                    <td class="trst-cell-id"> 1 </td>
+                    <td> AccountId </td>
+                    <td> Checking, Saving , </td>
+                    <td> 0000 </td>
+
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 
-    <ul id="myUL">
-        <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-    </ul>
 
 
-    <form action=" http://localhost:3000/users" id="user-form">
-        <label for="name">
-            <strong> Name :</strong>
-            <input type="text" name="name" id="name">
-        </label>
+    <h1> Transfer | Deposit | Withdraw - Money </h1>
 
-        <label for="email">
-            Email :
-            <input type="text" name="email" id="email">
-        </label>
+    <div id="main-transfer" class="header">
+        <form id="transfer-form">
+            <div>
+                <label for="account-number" class="form-child">
+                    <strong> Your Account Number/Id </strong>
+                    <input type="number" name="userAccountId" id="account-number">
+                </label>
+            </div>
+            <div>
+                <label for="user-action" class="form-child">
+                    <strong> Action : [ withdraw, deposit, transfer ] </strong>
+                    <input type="text" name="action" id="user-action">
+                </label>
+            </div>
+            <div>
+                <label for="receiverId" class="form-child">
+                    <strong> Receiver Id : </strong>
+                    <input type="number" name="receiverId" id="receiverId">
+                </label>
+            </div>
+            <div>
+                <label for="receiverId" class="form-child">
+                    <strong> Receiver Account Id : </strong>
+                    <input type="number" name="receiverAccountId" id="receiverId">
+                </label>
+            </div>
+            <div>
+                <label for="amount" class="form-child">
+                    <strong> Amount $ </strong>
+                    <input type="number" name="amount" id="amount">
+                </label>
+            </div>
+            <input type="submit" value="Submit Action" class="form-child">
+        </form>
+    </div>
 
-        <label for="password">
-            Password :
-            <input type="text" name="password" id="password">
-        </label>
+    <h3 class="" class="menu">
+        <a href="../user/user.html">
+            <button id="sign-up-btn"> User Page </button>
+        </a>
+    </h3>
 
-        <label for="confirm_password">
-            Confirm Password :
-            <input type="text" name="confirm_password" id="confirm_password">
-        </label>
+    <h3 class="" class="menu">
+        <button id="sign-out-btn"> Sign Out </button>
+    </h3>
 
-        <input type="submit" value="Create new user">
-    </form>
+    <script type="module" src="transaction.js"></script>
 
-    <script src="user.js"></script>
 </body>
 
 </html>
