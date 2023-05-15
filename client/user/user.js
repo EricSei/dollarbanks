@@ -1,4 +1,12 @@
-import { getAuthUser, getUserByEmail, getFormData, postFormData, destroyUser } from "./utility.js";
+import {
+    getAuthUser,
+    getUserByEmail,
+    getFormData,
+    postFormData,
+    destroyUser,
+    getAccountsByUserId,
+    createAcountsTable
+} from "./utility.js";
 
 let currentUser = await getUserByEmail(getAuthUser("auth"));
 
@@ -27,28 +35,6 @@ function handleSignOut(event) {
 
 }
 
-
-if (currentUser) {
-    let welcome = document.querySelector("#welcome");
-    let userId = document.querySelector("#user-id");
-    let userName = document.querySelector("#user-name");
-    let userEmail = document.querySelector("#user-email");
-
-    welcome.innerText = `Welcome , ${currentUser.name}`;
-    userId.innerText = `User Id : ${currentUser.id}`;
-    userName.innerText = ` Name : ${currentUser.name}`;
-    userEmail.innerText = `Email : ${currentUser.email}`;
-
-    // await getTransactions(currentUser.id);
-    let transactions = await getRecentTransactions(currentUser.id);
-    // console.log(transactions.length)
-    createTransactionTable(transactions);
-} else {
-    location.replace("http://localhost:5500/client/home/home.html")
-}
-
-
-
 function createTransactionTable(transactions) {
     var table = document.getElementById("transaction-table");
 
@@ -71,9 +57,40 @@ function createTransactionTable(transactions) {
 
 }
 
+if (currentUser) {
+    let welcome = document.querySelector("#welcome");
+    let userId = document.querySelector("#user-id");
+    let userName = document.querySelector("#user-name");
+    let userEmail = document.querySelector("#user-email");
+
+    welcome.innerText = `Welcome , ${currentUser.name}`;
+    userId.innerText = `User Id : ${currentUser.id}`;
+    userName.innerText = ` Name : ${currentUser.name}`;
+    userEmail.innerText = `Email : ${currentUser.email}`;
+
+    // await getTransactions(currentUser.id);
+    let transactions = await getRecentTransactions(currentUser.id);
+    console.log(transactions)
+    if (transactions) {
+        createTransactionTable(transactions);
+    }
+} else {
+    location.replace("http://localhost:5500/client/home/home.html")
+}
+
+
 let transferForm = document.getElementById("transfer-form");
 let signOutBtn = document.getElementById("sign-out-btn");
 signOutBtn.addEventListener("click", handleSignOut);
+
+
+
+// if (currentUser) {
+//     let accounts = await getAccountsByUserId(currentUser.id)
+//     if (accounts.length) {
+//         createAcountsTable(accounts)
+//     }
+// }
 
 
 window.onload = function () {

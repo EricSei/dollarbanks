@@ -1,49 +1,47 @@
-import { getAuthUser, getUserByEmail, getFormData, postFormData, updateFormData } from "../user/utility.js";
+import {
+    getAuthUser,
+    getUserByEmail,
+    getFormData,
+    postFormData,
+    updateFormData,
+    getAccountsByUserId,
+    getAccount,
+    createAcountsTable,
+} from "../user/utility.js";
 
 let currentUser = await getUserByEmail(getAuthUser("auth"));
 console.log(currentUser)
 
-async function getAccountsByUserId(userId) {
-    let accounts = await getFormData(`http://localhost:3000/accounts?userId=${userId}`)
+/**
+ * Event handler for a form submit event.
+ * @param {SubmitEvent} event
+ */
+async function handleAccountForm(event) {
+    event.preventDefault();
+    let form = event.currentTarget;
+    let url = form.action; // URL from form
+    url = `http://localhost:3000/accounts`;
+    // {
+    //     "id": 1,
+    //     "userId": 1,
+    //     "type": "checking",
+    //     "balance": 6028
+    //   },
+    try {
+        let formData = new FormData(form);
+        let formObject = Object.fromEntries(formData.entries());
+        let formBody = {
+            "userId": currentUser.id,
+            "type": formObject.type,
+            "balance": 1000
+        }
+        //validation
+        const responseData = await postFormData(url, formBody);
+        console.log(responseData);
 
-    return accounts;
-}
-
-async function getAccount(accountId) {
-    let account = await getFormData(`http://localhost:3000/accounts/${accountId}`)
-    console.log(account)
-    return account;
-}
-
-
-
-if (currentUser) {
-    let accounts = await getAccountsByUserId(currentUser.id)
-    if (accounts.length) {
-        createAcountsTable(accounts)
+    } catch (error) {
+        console.error(error);
     }
-
-}
-
-function createAcountsTable(accounts) {
-
-    var table = document.getElementById("accounts-table");
-
-    const tableData = accounts && accounts.length > 0 ? accounts.map(account => {
-        return (
-            `<tr >
-                 <td style="border : 1px solid red">${account.id}</td>
-                 <td style="border : 1px solid red" >${account.type}</td>
-                 <td style="border : 1px solid red" >${account.balance}</td>
-                
-              </tr>`
-        );
-    }).join('') : `<tr> Acount is empty. Create Account </tr>`;
-
-    const tableBody = document.querySelector("#trst-body");
-    tableBody.innerHTML = tableData;
-    table.style.border = "2px solid red";
-
 }
 
 async function handleTransactionSubmit(event) {
@@ -160,9 +158,20 @@ async function handleTransactionSubmit(event) {
     }
 }
 
+if (currentUser) {
+    let accounts = await getAccountsByUserId(currentUser.id)
+    if (accounts.length) {
+        createAcountsTable(accounts)
+    }
+}
+
 let transferForm = document.getElementById("transfer-form");
 console.log(transferForm)
 transferForm.addEventListener("submit", handleTransactionSubmit);
+
+let accountForm = document.getElementById("account-form");
+console.log(accountForm)
+accountForm.addEventListener("submit", handleAccountForm);
 
 // window.onload = function () {
 //     transferForm.addEventListener("submit", handleTransactionSubmit);

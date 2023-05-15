@@ -24,8 +24,8 @@
             <tbody id="trst-body">
                 <tr class="trst-row">
                     <td class="trst-cell-id"> 1 </td>
-                    <td> AccountId </td>
-                    <td> Checking, Saving , </td>
+                    <td> 0 </td>
+                    <td> None </td>
                     <td> 0000 </td>
 
                 </tr>
@@ -35,6 +35,20 @@
     </div>
 
 
+
+    <div id="crete-account" class="header">
+        <h1> Create New Bank Account </h1>
+        <form id="account-form">
+            <div>
+                <label for="account-number" class="form-child">
+                    <strong> Account Type [ checking , saving ]</strong>
+                    <input type="text" name="type" id="account-number">
+                </label>
+            </div>
+
+            <input type="submit" value="Submit To Create New Account" class="form-child">
+        </form>
+    </div>
 
     <h1> Transfer | Deposit | Withdraw - Money </h1>
 
@@ -78,10 +92,6 @@
         <a href="../user/user.html">
             <button id="sign-up-btn"> User Page </button>
         </a>
-    </h3>
-
-    <h3 class="" class="menu">
-        <button id="sign-out-btn"> Sign Out </button>
     </h3>
 
     <script type="module" src="transaction.js"></script>

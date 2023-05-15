@@ -1,5 +1,4 @@
-// userData : { }
-
+//User Functions
 export function setAuthUser(email) {
     localStorage.setItem("auth", email);
 }
@@ -114,4 +113,38 @@ export async function updateFormData(url, formData) {
     }
 
     return response.json();
+}
+
+//User Accounts
+export async function getAccountsByUserId(userId) {
+    let accounts = await getFormData(`http://localhost:3000/accounts?userId=${userId}`)
+
+    return accounts;
+}
+
+export async function getAccount(accountId) {
+    let account = await getFormData(`http://localhost:3000/accounts/${accountId}`)
+    console.log(account)
+    return account;
+}
+
+export function createAcountsTable(accounts) {
+
+    var table = document.getElementById("accounts-table");
+
+    const tableData = accounts && accounts.length > 0 ? accounts.map(account => {
+        return (
+            `<tr >
+                 <td style="border : 1px solid red">${account.id}</td>
+                 <td style="border : 1px solid red" >${account.type}</td>
+                 <td style="border : 1px solid red" >${account.balance}</td>
+                
+              </tr>`
+        );
+    }).join('') : `<tr> Acount is empty. Create Account </tr>`;
+
+    const tableBody = document.querySelector("#trst-body");
+    tableBody.innerHTML = tableData;
+    table.style.border = "2px solid red";
+
 }
