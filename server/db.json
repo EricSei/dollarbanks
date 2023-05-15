@@ -63,19 +63,37 @@
       "id": 1,
       "userId": 1,
       "type": "checking",
-      "balance": 6028
+      "balance": 5000
     },
     {
       "id": 3,
       "userId": 1,
       "type": "saving",
-      "balance": 15000
+      "balance": 10000
     },
     {
       "id": 2,
       "userId": 2,
       "type": "checking",
       "balance": 5000
+    },
+    {
+      "userId": 6,
+      "type": "saving",
+      "balance": 1028,
+      "id": 4
+    },
+    {
+      "userId": 6,
+      "type": "checking",
+      "balance": 1000,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "type": "checking",
+      "balance": 2000,
+      "id": 6
     }
   ],
   "transactions": [
@@ -370,6 +388,46 @@
       "amount": 972,
       "timestamp": "2023-05-15T02:09:53.928Z",
       "id": 38
+    },
+    {
+      "action": "withdraw",
+      "userId": 1,
+      "userAccountId": "3",
+      "receiverId": 0,
+      "receiverAccountId": 0,
+      "amount": 5000,
+      "timestamp": "2023-05-15T02:12:21.347Z",
+      "id": 39
+    },
+    {
+      "action": "transfer",
+      "userId": 6,
+      "userAccountId": "4",
+      "receiverId": "1",
+      "receiverAccountId": "1",
+      "amount": 100,
+      "timestamp": "2023-05-15T02:58:33.209Z",
+      "id": 40
+    },
+    {
+      "action": "transfer",
+      "userId": 1,
+      "userAccountId": "1",
+      "receiverId": "6",
+      "receiverAccountId": "4",
+      "amount": 128,
+      "timestamp": "2023-05-15T02:59:46.077Z",
+      "id": 41
+    },
+    {
+      "action": "transfer",
+      "userId": 1,
+      "userAccountId": "1",
+      "receiverId": "1",
+      "receiverAccountId": "6",
+      "amount": 1000,
+      "timestamp": "2023-05-15T03:02:08.001Z",
+      "id": 42
     }
   ]
 }
